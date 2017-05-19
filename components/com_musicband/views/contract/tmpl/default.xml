@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_MUSICBAND_CONTRACT">
+    </layout>
+    <fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_musicband/models/fields">
+
+			<field name="id" type="modal_contract"
+				label="COM_MUSICBAND_SELECT_CONTRACT_LABEL"
+				required="true"
+				select="true"
+				new="true"
+				edit="true"
+				clear="true"
+				description="COM_MUSICBAND_FIELD_SELECT_CONTRACT_DESC" 
+			/>
+		</fieldset>
+	</fields>
+</metadata>

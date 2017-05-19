@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+        name="musicband"
+        label="COM_MUSICBAND_LIST_CONFIG_LABEL"
+    >
+        <field
+            name="show_language"
+            type="radio"
+            label="COM_MUSICBAND_SHOW_LANGUAGE"
+            description="COM_MUSICBAND_SHOW_LANGUAGE_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+        <field
+            name="show_category"
+            type="radio"
+            label="COM_MUSICBAND_SHOW_CATEGORY"
+            description="COM_MUSICBAND_SHOW_CATEGORY_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+        <field
+            name="show_demo_audio"
+            type="radio"
+            label="COM_MUSICBAND_SHOW_DEMO_AUDIO"
+            description="COM_MUSICBAND_SHOW_DEMO_AUDIO_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+        <field
+            name="show_demo_video"
+            type="radio"
+            label="COM_MUSICBAND_SHOW_DEMO_VIDEO"
+            description="COM_MUSICBAND_SHOW_DEMO_VIDEO_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JHIDE</option>
+            <option value="1">JSHOW</option>
+        </field>
+        <field 
+            name="positions" 
+            type="text" 
+            default="100" 
+            label="COM_MUSICBAND_POSITIONS" 
+            description="COM_MUSICBAND_POSITIONS_DESC" 
+            filter="integer" 
+        />
+        <field
+            name="show_news"
+            type="radio"
+            label="COM_MUSICBAND_SHOW_NEWS"
+            description="COM_MUSICBAND_SHOW_NEWS_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field 
+            name="news" 
+            type="list" 
+            default="3" 
+            label="COM_MUSICBAND_NEWS" 
+            description="COM_MUSICBAND_NEWS_DESC"
+        >
+            <option value="1">COM_MUSICBAND_NEWS1</option>
+            <option value="2">COM_MUSICBAND_NEWS2</option>
+            <option value="3">COM_MUSICBAND_NEWS3</option>
+            <option value="4">COM_MUSICBAND_NEWS4</option>
+            <option value="5">COM_MUSICBAND_NEWS5</option>
+            <option value="6">COM_MUSICBAND_NEWS6</option>
+            <option value="7">COM_MUSICBAND_NEWS7</option>
+            <option value="8">COM_MUSICBAND_NEWS8</option>
+            <option value="9">COM_MUSICBAND_NEWS9</option>
+            <option value="10">COM_MUSICBAND_NEWS10</option>
+            <option value="11">COM_MUSICBAND_NEWS11</option>
+            <option value="12">COM_MUSICBAND_NEWS12</option>
+        </field>
+    </fieldset>
+    <fieldset
+        name="musicband2"
+        label="COM_MUSICBAND_PRE_TEXT"
+    >
+        <field 
+            name="pre_text" 
+            label ="COM_MUSICBAND_PRE_TEXT" 
+            description="COM_MUSICBAND_PRE_TEXT_DESC"
+            type="editor" 
+            buttons="true"
+            filter="JComponentHelper::filterText" 
+        />
+    </fieldset>
+    <fieldset
+        name="musicband3"
+        label="COM_MUSICBAND_POST_TEXT"
+    >
+        <field 
+            name="post_text" 
+            label ="COM_MUSICBAND_POST_TEXT" 
+            description="COM_MUSICBAND_POST_TEXT_DESC"
+            type="editor" 
+            buttons="true"
+            filter="safehtml" 
+        />
+    </fieldset>
+    <fieldset
+        name="musicband4"
+        label="COM_MUSICBAND_PASS_CONFIG_LABEL"
+        description="COM_MUSICBAND_PASS_CONFIG_INFO"
+    >
+        <field 
+            name="pass_text" 
+            label ="COM_MUSICBAND_PASS_CONFIG_LABEL" 
+            description="COM_MUSICBAND_PASS_CONFIG_DESC"
+            type="editor" 
+            buttons="true"
+            filter="safehtml" 
+        />
+    </fieldset>
+    <fieldset
+        name="permissions"
+        label="JCONFIG_PERMISSIONS_LABEL"
+        description="JCONFIG_PERMISSIONS_DESC"
+    >
+        <field
+            name="rules"
+            type="rules"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            class="inputbox"
+            validate="rules"
+            filter="rules"
+            component="com_musicband"
+            section="component"
+        />
+    </fieldset>
+</config>

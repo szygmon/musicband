@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field 
+            name="date" 
+            type="calendar" 
+            format="%Y-%m-%d"
+            default="NOW" 
+            label="COM_MUSICBAND_EVENT_DATE" 
+            description="COM_MUSICBAND__EVENT_DATE_DESC" 
+            required="true"
+        />	
+        <field
+            name="name"
+            type="text"
+            label="COM_MUSICBAND_EVENT_NAME"
+            description="COM_MUSICBAND_EVENT_NAME_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+            required="true"
+        />
+        <field
+            name="pass"
+            type="text"
+            label="COM_MUSICBAND_EVENT_PASS"
+            description="COM_MUSICBAND_EVENT_PASS_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+        />
+        <field name="published"
+               type="list"
+               label="JSTATUS"
+               description = "JFIELD_PUBLISHED_DESC"
+               size="1"
+               class="inputbox"
+               filter="intval"
+               default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+        <field
+            name="id"
+            type="hidden"
+        />
+    </fieldset>
+</form>

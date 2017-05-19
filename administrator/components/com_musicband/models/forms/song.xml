@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field
+            name="title"
+            type="text"
+            label="COM_MUSICBAND_TITLE"
+            description="COM_MUSICBAND_TITLE_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+            required="true"
+        />
+        <field
+            name="artist"
+            type="text"
+            label="COM_MUSICBAND_ARTIST"
+            description="COM_MUSICBAND_ARTIST_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+        />
+        <field
+            name="catid"
+            type="category"
+            extension="com_musicband"
+            label="COM_MUSICBAND_CATEGORY"
+            description="COM_MUSICBAND_CATEGORY_DESC"
+            class="inputbox"
+            default=""
+        >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        <field
+            name="language"
+            type="text"
+            label="COM_MUSICBAND_LANGUAGE"
+            description="COM_MUSICBAND_LANGUAGE_DESC"
+            size="20"
+            class="inputbox"
+            default=""
+        />
+        <field 
+            name="mp3" 
+            type="file" 
+            label="COM_MUSICBAND_DEMO_AUDIO_FORM" 
+            description="COM_MUSICBAND_DEMO_AUDIO_FORM_DESC" 
+            size="10240"
+            accept="audio/mp3"
+        />
+        <field name="removemp3"
+               type="radio"
+               id="removemp3"
+               class="btn-group btn-group-yesno"
+               label="COM_MUSICBAND_REMOVE_MP3"
+               description="COM_MUSICBAND_REMOVE_MP3_DESC"
+               default="1"
+        >
+            <option value="1">JNO</option>
+            <option value="0">JYES</option>
+        </field>
+        <field
+            name="demo_video"
+            type="text"
+            label="COM_MUSICBAND_DEMO_VIDEO_FORM"
+            description="COM_MUSICBAND_DEMO_VIDEO_FORM_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+        />
+        <field 
+            name="date" 
+            type="calendar" 
+            format="%Y-%m-%d"
+            default="NOW" 
+            label="COM_MUSICBAND_DATE" 
+            description="COM_MUSICBAND_DATE_DESC" 
+        />
+        <field
+            name="id"
+            type="hidden"
+        />
+    </fieldset>
+</form>

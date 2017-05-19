@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field
+            name="title"
+            type="text"
+            label="COM_MUSICBAND_TITLE"
+            description="COM_MUSICBAND_TITLE_DESC"
+            size="50"
+            class="inputbox"
+            default=""
+            required="true"
+        />
+        <field
+            name="contract" 
+            label ="COM_MUSICBAND_CONTRACT_DESC" 
+            description="COM_MUSICBAND_CONTRACT_DESC"
+            type="editor" 
+            buttons="true"
+            filter="safehtml" 
+        />
+        <field
+            name="id"
+            type="hidden"
+        />
+    </fieldset>
+</form>
