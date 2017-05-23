@@ -26,6 +26,14 @@ endif;
             <input type="text" name="date" value="" placeholder="rok-miesiąc-dzień" size="50" />
         </div>
     </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label id="jform_name-lbl" class="hasPopover" title="Miejsce imprezy">Miejsce imprezy*</label>
+        </div>
+        <div class="controls">
+            <input type="text" name="location" value="" size="100" />
+        </div>
+    </div>
 
     <?php
     foreach ($this->fields as $field) {

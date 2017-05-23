@@ -24,8 +24,9 @@ if (!empty($this->sidebar)) :
                 <thead>
                     <tr>
                         <th style="width: 1%; align: center"><?php echo JHtml::_('grid.checkall'); ?></th>
-                        <th style="width: 50%;"><?php echo JText::_('COM_MUSICBAND_FIELD_NAME'); ?></th>
+                        <th style="width: 49%;"><?php echo JText::_('COM_MUSICBAND_FIELD_NAME'); ?></th>
                         <th style="width: 49%;"><?php echo JText::_('COM_MUSICBAND_FIELD_LABEL'); ?></th>
+                        <th style="width: 1%;"><?php echo JText::_('w kalendarzu'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,9 @@ if (!empty($this->sidebar)) :
                             <td class="nowrap center"><?php echo JHtml::_('grid.id', $i, $row->id); ?></td>
                             <td><a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_MUSICBAND_EDIT'); ?>"><?php echo $row->name; ?></a></td>
                             <td><?php echo $row->label; ?></td>
+                            <td class="center">
+                                <?php echo JHtml::_('jgrid.published', $row->published, $i, 'fields.', true); ?>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

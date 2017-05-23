@@ -76,6 +76,8 @@ class MusicbandViewFields extends JViewLegacy {
             JToolBarHelper::addNew('fields.add');
             JToolBarHelper::editList('fields.edit');
             JToolBarHelper::deleteList(JText::_('COM_MUSICBAND_CONFIRM_DELETE'), 'fields.delete');
+            JToolbarHelper::publishList('fields.publish');
+            JToolbarHelper::unpublishList('fields.unpublish');
         }
 
         if (JFactory::getUser()->authorise('core.admin', 'com_musicband'))

@@ -181,14 +181,14 @@ class MusicbandModelEvents extends JModelLegacy {
                 ->select('#__musicband_fields.*, #__musicband_fields_values.*')
                 ->leftJoin('#__musicband_fields_values on id=#__musicband_fields_values.field_id')
                 ->from($db->quoteName('#__musicband_fields'))
-                ->where('#__musicband_fields_values.item_id=' . $cid);
+                ->where('#__musicband_fields.published=1 AND #__musicband_fields_values.item_id=' . $cid);
         $db->setQuery($query2);
         $fields = $db->loadObjectList();
         
         $description = '';
         
         foreach ($fields as $field) {
-            $description .= $field->label.': '.$field->value.'\n';
+            $description .= $field->label.': '.$field->value."\n";
         }
         
         $params = JComponentHelper::getParams('com_musicband');

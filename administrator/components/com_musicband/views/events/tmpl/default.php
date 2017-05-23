@@ -26,6 +26,7 @@ if (!empty($this->sidebar)) :
                         <th style="width: 1%; align: center"><?php echo JHtml::_('grid.checkall'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_DATE'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_NAME'); ?></th>
+                        <th><?php echo JText::_('COM_MUSICBAND_EVENT_LOCATION'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_PASS'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_SONGS_LIST'); ?></th>
                         <th><?php echo JText::_('w kalendarzu'); ?></th>
@@ -41,6 +42,7 @@ if (!empty($this->sidebar)) :
                             <td class="nowrap center hidden-phone"><?php echo JHtml::_('grid.id', $i, $row->id); ?></td>
                             <td><a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_MUSICBAND_EDIT'); ?>"><?php echo $row->date; ?></a></td>
                             <td><a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_MUSICBAND_EDIT'); ?>"><?php echo $row->name; ?></a></td>
+                            <td><a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_MUSICBAND_EDIT'); ?>"><?php echo $row->location; ?></a></td>
                             <td><?php echo $row->pass; ?></td>
                             <td>
                                 <?php if ($row->songs || $row->info): ?>

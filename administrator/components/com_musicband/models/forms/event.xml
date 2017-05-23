@@ -21,6 +21,16 @@
             required="true"
         />
         <field
+            name="location"
+            type="text"
+            label="COM_MUSICBAND_EVENT_LOCATION"
+            description="COM_MUSICBAND_EVENT_NAME_DESC"
+            size="100"
+            class="inputbox"
+            default=""
+            required="true"
+        />
+        <field
             name="pass"
             type="text"
             label="COM_MUSICBAND_EVENT_PASS"

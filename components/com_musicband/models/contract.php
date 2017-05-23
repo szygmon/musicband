@@ -47,31 +47,43 @@ class MusicbandModelContract extends JModelItem {
         unset($form['send']);
         //var_dump($form);
 
-        $event = $this->addEvent($form['name'], $form['date']);
+        $event = $this->addEvent($form['name'], $form['date'], $form['location']);
 
         foreach ($form as $name => $value) {
             $contract->contract = str_replace('{' . $name . '}', $value, $contract->contract);
-            //if ($field['required'] == 'true') {
-              //  $f = new stdClass();
-                //$f->name = 'nowe';
-                //$f->date = '2017-01-01'; Dodanie pól do bazy
-
-                //$result = JFactory::getDbo()->insertObject('#__musicband_events', $event);
-            //}
         }
 
 
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true)
+                ->select('*')
+                ->from($db->quoteName('#__musicband_fields'))
+                ->where('published=1');
+
+        $db->setQuery($query);
+        $fields = $db->loadObjectList();
+
+        foreach ($fields as $field) {
+            $data = new stdClass();
+            $data->field_id = $field->id;
+            $data->item_id = $event->id;
+            $data->value = $form[$field->name];
+
+            $result = JFactory::getDbo()->insertObject('#__musicband_fields_values', $data);
+        }
 
 
 //var_dump($contract->contract); 
+
         return $contract->contract;
     }
 
-    protected function addEvent($name, $date) {
+    protected function addEvent($name, $date, $location) {
         // Create and populate an object.
         $event = new stdClass();
         $event->name = $name;
         $event->date = $date;
+        $event->location = $location;
 
         $result = JFactory::getDbo()->insertObject('#__musicband_events', $event);
 
@@ -92,7 +104,7 @@ class MusicbandModelContract extends JModelItem {
                 ->select('*')
                 ->from($db->quoteName('#__musicband_fields'));
 
-        $db->setQuery($query); 
+        $db->setQuery($query);
         $result = $db->loadObjectList();
 
         return $result;

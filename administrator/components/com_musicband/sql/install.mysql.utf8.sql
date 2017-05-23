@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `#__musicband_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

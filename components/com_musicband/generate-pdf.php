@@ -1,16 +1,9 @@
 <?php
-include('../../media/com_musicband/mpdf/mpdf.php');
+include('../../media/com_musicband/mpdf/vendor/autoload.php');
 
-$inputs = $_POST;
-$contract = $inputs['contract'];
-unset($inputs['send']);
-unset($inputs['contract']);
+$contract = $_POST['contract'];
 
-foreach ($inputs as $name => $value) {
-    $contract = str_replace('{' . $name . '}', $value, $contract);
-}
-
-$mpdf = new mPDF();
+$mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($contract);
 $mpdf->Output();
 
