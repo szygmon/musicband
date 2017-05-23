@@ -167,17 +167,55 @@ class MusicbandModelEvents extends JModelLegacy {
         return $result;
     }
 
-    public function publishCalendar($ids) {
+    public function publishCalendar($cid) {
         $db = JFactory::getDbo();
-        $query = $db->getQuery(true)
-                ->select('info')
-                ->from($db->quoteName('#__musicband_events_info'))
-                ->where('eventid=' . $ids);
+        $query1 = $db->getQuery(true)
+                ->select('#__musicband_events.*')
+                ->from($db->quoteName('#__musicband_events'))
+                ->where('id=' . $cid);
 
-        $db->setQuery($query);
-        $result = $db->loadRowList();
+        $db->setQuery($query1);
+        $event = $db->loadObject();
+        
+        $query2 = $db->getQuery(true)
+                ->select('#__musicband_fields.*, #__musicband_fields_values.*')
+                ->leftJoin('#__musicband_fields_values on id=#__musicband_fields_values.field_id')
+                ->from($db->quoteName('#__musicband_fields'))
+                ->where('#__musicband_fields_values.item_id=' . $cid);
+        $db->setQuery($query2);
+        $fields = $db->loadObjectList();
+        
+        $description = '';
+        
+        foreach ($fields as $field) {
+            $description .= $field->label.': '.$field->value.'\n';
+        }
+        
+        $params = JComponentHelper::getParams('com_musicband');
+        
+        require_once JPATH_ROOT . '/media/com_musicband/google-calendar/vendor/autoload.php';
+        $client = new Google_Client();
+        $client->setClientId($params->get('gclientid'));
+        $client->setClientSecret($params->get('gclientsecret')); 
+        $client->addScope(Google_Service_Calendar::CALENDAR);
+        $client->setAccessToken(JFactory::getSession()->get('google_access_token'));
+        $service = new Google_Service_Calendar($client);
+        
+        $gevent = new Google_Service_Calendar_Event(array(
+            'summary' => $event->name,
+            'location' => $event->location,
+            'description' => $description,
+            'start' => array(
+                'date' => $event->date,
+            ),
+            'end' => array(
+                'date' => $event->date,
+            ),
+        ));
+        
+        return $service->events->insert($params->get('gcalendarid'), $gevent);
 
-        return $result;
+        //return $result;
     }
 
 }

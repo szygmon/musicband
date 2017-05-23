@@ -1,11 +1,11 @@
 <?php
+
 /**
  * @package     Joomla.Administrator
  * @subpackage  com_musicband
  *
  * @copyright   Copyright (C) 2015 Szymon Michalewicz. All rights reserved.
  */
-
 // Brak bezpośredniego dostępu do pliku
 defined('_JEXEC') or die('Restricted access');
 
@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  */
 class MusicbandViewEvents extends JViewLegacy {
 
-     /**
+    /**
      * Execute and display a template script.
      *
      * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
@@ -55,6 +55,14 @@ class MusicbandViewEvents extends JViewLegacy {
             $app->enqueueMessage($passInfo, 'notice');
         }
 
+        
+        
+        if ($app->input->get('google') == 'ok') {
+            if (JFactory::getSession()->get('google_access_token')) {
+                $this->getModel()->publishCalendar(JFactory::getApplication()->input->get('cid'));
+            }
+        }
+
         parent::display($tpl);
     }
 
@@ -77,11 +85,12 @@ class MusicbandViewEvents extends JViewLegacy {
             JToolBarHelper::deleteList(JText::_('COM_MUSICBAND_CONFIRM_DELETE'), 'events.delete');
             JToolBarHelper::custom('events.deleteold', 'delete', '', JText::_('COM_MUSICBAND_DELETE_OLD'), false);
             JToolbarHelper::divider();
-            JToolbarHelper::publishList('events.publish');
-            JToolbarHelper::unpublishList('events.unpublish');
+            //JToolbarHelper::publishList('events.publish');
+            //JToolbarHelper::unpublishList('events.unpublish');
             //(JText::_('COM_MUSICBAND_CONFIRM_DELETE_OLD'), 'events.deleteold', JText::_('COM_MUSICBAND_DELETE_OLD'));
         }
         if (JFactory::getUser()->authorise('core.admin', 'com_musicband'))
             JToolbarHelper::preferences('com_musicband');
     }
+
 }

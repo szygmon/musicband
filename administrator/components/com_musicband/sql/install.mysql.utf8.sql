@@ -15,8 +15,9 @@ CREATE TABLE IF NOT EXISTS `#__musicband_events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `date` date NOT NULL,
+  `location` varchar(100) NOT NULL,
   `pass` varchar(50) DEFAULT NULL,
-    `calendar` boolean NOT NULL DEFAULT FALSE,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0;
 
@@ -43,4 +44,10 @@ CREATE TABLE IF NOT EXISTS `#__musicband_fields` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `#__musicband_fields_values` (
+  `field_id` int(11) unsigned NOT NULL,
+  `item_id` varchar(255) NOT NULL,
+  `value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -129,6 +129,33 @@
         />
     </fieldset>
     <fieldset
+        name="musicband5"
+        label="COM_MUSICBAND_GCALENDAT_CONFIG_LABEL"
+    >
+        <field 
+            name="gclientid" 
+            type="text" 
+            default="" 
+            label="COM_MUSICBAND_GCALENDAR_CLIENTID" 
+            description="COM_MUSICBAND_POSITIONS_DESC" 
+        />
+        <field 
+            name="gclientsecret" 
+            type="text" 
+            default="" 
+            label="COM_MUSICBAND_GCALENDAR_CLIENTSECRET" 
+            description="COM_MUSICBAND_POSITIONS_DESC" 
+        />
+        <field 
+            name="gcalendarid" 
+            type="text" 
+            default="" 
+            label="COM_MUSICBAND_GCALENDAR_ID" 
+            description="COM_MUSICBAND_POSITIONS_DESC" 
+        />
+        
+    </fieldset>
+    <fieldset
         name="permissions"
         label="JCONFIG_PERMISSIONS_LABEL"
         description="JCONFIG_PERMISSIONS_DESC"

@@ -9,6 +9,9 @@
 // Brak bezpośredniego dostępu do pliku
 defined('_JEXEC') or die('Restricted access');
 
+//use Joomla\Google\Google;
+use Joomla\Registry\Registry;
+
 /**
  * The musicband controller
  *
@@ -47,12 +50,19 @@ class MusicbandControllerEvents extends JControllerAdmin {
         $this->setRedirect('index.php?option=com_musicband&view=events', JText::_('COM_MUSICBAND_DELETED_OLD_SUCCESS'));
     }
 
-    
     public function publish() {
-        //$this->getModel('Events')->deleteOldEvents();
-        //$this->setRedirect('index.php?option=com_musicband&view=events', JText::_('COM_MUSICBAND_DELETED_OLD_SUCCESS'));
-        
+
         parent::publish();
+
+        if ($this->getTask() == 'publish') {
+            if (JFactory::getSession()->get('google_access_token')) {
+                $this->getModel('Events')->publishCalendar(JFactory::getApplication()->input->get('cid')[0]);
+            } else {
+                $redirect_uri = JUri::getInstance() . '&layout=oauth2callback&cid=' . JFactory::getApplication()->input->get('cid')[0];
+                $this->setRedirect($redirect_uri);
+                $this->redirect();
+            }
+        }
     }
 
 }
