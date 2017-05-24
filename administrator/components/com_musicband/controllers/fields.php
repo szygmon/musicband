@@ -20,7 +20,7 @@ class MusicbandControllerFields extends JControllerAdmin {
     function __construct($config = array()) {
          parent::__construct($config);
           // Zmiana widoku po zapisie/edycji utworu
-          $this->view_list = 'field';  
+          $this->view_list = 'fields';  
     }
 
     /**
