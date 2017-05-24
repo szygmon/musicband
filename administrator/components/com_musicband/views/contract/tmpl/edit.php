@@ -24,6 +24,9 @@ if (!empty($this->sidebar)) :
             <div class="span2">
                 <?php echo JText::_('COM_MUSICBAND_CONTRACT_FIELDS'); ?>
                 <ul>
+                    <li><?php echo JText::_('COM_MUSICBAND_EVENT_NAME'); ?> - {name}</li>
+                    <li><?php echo JText::_('COM_MUSICBAND_EVENT_DATE'); ?> - {date}</li>
+                    <li><?php echo JText::_('COM_MUSICBAND_EVENT_LOCATION'); ?> - {location}</li>
                     <?php foreach ($this->fields as $field) : ?>
                         <li><?php echo $field->label; ?> - {<?php echo $field->name; ?>}</li>
                     <?php endforeach; ?>
