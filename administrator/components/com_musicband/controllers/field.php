@@ -15,12 +15,13 @@ defined('_JEXEC') or die('Restricted access');
  * @package     Joomla.Administrator
  * @subpackage  com_musicband
  */
-class MusicbandControllerFields extends JControllerAdmin {
+class MusicbandControllerField extends JControllerForm {
 
     function __construct($config = array()) {
-         parent::__construct($config);
-          // Zmiana widoku po zapisie/edycji utworu
-          $this->view_list = 'field';  
+        $this->view_item = 'fields';
+        parent::__construct($config);
+        // Zmiana widoku po zapisie/edycji utworu
+        $this->view_list = 'fields';
     }
 
     /**

@@ -30,9 +30,7 @@ class MusicbandViewContract extends JViewLegacy {
         
         if (JFactory::getApplication()->input->get('layout', 'default') == 'pdf') {
             $this->contract = $this->getModel()->generatePdf(); 
-            
         }
-        
         
         // Tytuł strony + przyrostek witryny
         $title = $this->params->get('page_title');

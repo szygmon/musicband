@@ -32,7 +32,7 @@ if (!empty($this->sidebar)) :
                 <tbody>
                     <?php
                     foreach ($this->items as $i => $row) :
-                        $link = JRoute::_('index.php?option=com_musicband&task=fields.edit&id=' . $row->id);
+                        $link = JRoute::_('index.php?option=com_musicband&task=field.edit&id=' . $row->id);
                         ?>
                         <tr>
                             <td class="nowrap center"><?php echo JHtml::_('grid.id', $i, $row->id); ?></td>

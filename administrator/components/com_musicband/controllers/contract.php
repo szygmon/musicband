@@ -18,9 +18,9 @@ defined('_JEXEC') or die('Restricted access');
 class MusicbandControllerContract extends JControllerForm {
 
     function __construct($config = array()) {
-         parent::__construct($config);
-          // Zmiana widoku po zapisie/edycji utworu
-          $this->view_list = 'contract'; 
+        parent::__construct($config);
+        // Zmiana widoku po zapisie/edycji utworu
+        $this->view_list = 'contract';
     }
 
     /**

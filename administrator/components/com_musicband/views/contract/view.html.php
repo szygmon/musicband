@@ -13,11 +13,7 @@ defined('_JEXEC') or die('Restricted access');
  * Widok dla listy imprez i listy wybranych przez klientów piosenek
  */
 class MusicbandViewContract extends JViewLegacy {
-
-    protected $pagination;
-    protected $state;
-    public $filterForm;
-    public $activeFilters;
+    
     protected $form = null;
 
     /**
@@ -36,15 +32,9 @@ class MusicbandViewContract extends JViewLegacy {
 
             return false;
         }
-
-        $this->form = $this->get('Form');
+        
         $this->item = $this->get('Item');
-        $this->script = $this->get('Script');
-        $this->pagination = $this->get('Pagination');
-        $this->state = $this->get('State');
-        $this->filterForm    = $this->get('FilterForm');
-        $this->activeFilters = $this->get('ActiveFilters');
-
+        $this->form = $this->get('Form');
         $this->fields = $this->get('Fields');
         
         MusicbandHelper::addSubmenu('contract');
@@ -81,7 +71,7 @@ class MusicbandViewContract extends JViewLegacy {
             // Przyciski
             JToolBarHelper::addNew('contract.add');
             JToolBarHelper::editList('contract.edit');
-            JToolBarHelper::deleteList(JText::_('COM_MUSICBAND_CONFIRM_DELETE'), 'contract.delete');
+            JToolBarHelper::deleteList(JText::_('COM_MUSICBAND_CONFIRM_DELETE'), 'contracts.delete');
         }
 
         if (JFactory::getUser()->authorise('core.admin', 'com_musicband'))

@@ -15,12 +15,12 @@ defined('_JEXEC') or die('Restricted access');
  * @package     Joomla.Administrator
  * @subpackage  com_musicband
  */
-class MusicbandControllerFields extends JControllerAdmin {
+class MusicbandControllerContracts extends JControllerAdmin {
 
     function __construct($config = array()) {
-         parent::__construct($config);
-          // Zmiana widoku po zapisie/edycji utworu
-          $this->view_list = 'field';  
+        parent::__construct($config);
+        // Zmiana widoku po zapisie/edycji utworu
+        $this->view_list = 'contract';
     }
 
     /**
@@ -32,7 +32,7 @@ class MusicbandControllerFields extends JControllerAdmin {
      *
      * @return  object  The model.
      */
-    public function getModel($name = 'Fields', $prefix = 'MusicbandModel', $config = array('ignore_request' => true)) {
+    public function getModel($name = 'Contract', $prefix = 'MusicbandModel', $config = array('ignore_request' => true)) {
         $model = parent::getModel($name, $prefix, $config);
 
         return $model;
