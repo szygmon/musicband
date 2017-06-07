@@ -62,7 +62,7 @@ class MusicbandViewFields extends JViewLegacy {
             JFactory::getApplication()->input->set('hidemainmenu', true);
 
             // Tytuł strony
-            JToolbarHelper::title(JText::_('COM_MUSICBAND') . ': ' . JText::_('COM_MUSICBAND_CONTRACT'), 'stack article');
+            JToolbarHelper::title(JText::_('COM_MUSICBAND') . ': ' . JText::_('COM_MUSICBAND_CUSTOM_FIELDS'), 'stack article');
 
             // Przyciski
             //JToolBarHelper::apply('field.apply');
@@ -71,7 +71,7 @@ class MusicbandViewFields extends JViewLegacy {
             JToolBarHelper::cancel('field.cancel');
         } else {
             // Tytuł strony
-            JToolbarHelper::title(JText::_('COM_MUSICBAND') . ': ' . JText::_('COM_MUSICBAND_CONTRACT'), 'stack article');
+            JToolbarHelper::title(JText::_('COM_MUSICBAND') . ': ' . JText::_('COM_MUSICBAND_CUSTOM_FIELDS'), 'stack article');
 
             // Przyciski
             JToolBarHelper::addNew('field.add');
