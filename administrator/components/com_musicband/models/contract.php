@@ -1,11 +1,11 @@
 <?php
+
 /**
  * @package     Joomla.Administrator
  * @subpackage  com_musicband
  *
  * @copyright   Copyright (C) 2015 Szymon Michalewicz. All rights reserved.
  */
-
 // Brak bezpośredniego dostępu do pliku
 defined('_JEXEC') or die('Restricted access');
 
@@ -13,7 +13,8 @@ defined('_JEXEC') or die('Restricted access');
  * Model for musicband
  */
 class MusicbandModelContract extends JModelAdmin {
-       /**
+
+    /**
      * Method to get a table object, load it if necessary.
      *
      * @param   string  $type    The table name. Optional.
@@ -73,29 +74,29 @@ class MusicbandModelContract extends JModelAdmin {
 
         return $data;
     }
-    
-    
+
     public function getContracts() {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true)
                 ->select('*')
                 ->from($db->quoteName('#__musicband_contract'));
-        
+
         $db->setQuery($query);
         $result = $db->loadObjectList();
 
         return $result;
     }
-    
-        public function getFields() {
+
+    public function getFields() {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true)
                 ->select('*')
                 ->from($db->quoteName('#__musicband_fields'));
-        
+
         $db->setQuery($query);
         $result = $db->loadObjectList();
 
         return $result;
     }
+
 }

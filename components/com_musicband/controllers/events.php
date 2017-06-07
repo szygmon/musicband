@@ -60,6 +60,6 @@ class MusicbandControllerEvents extends JControllerForm {
         // Czyszczeie sesji po poprawnym dodaniu
         $session->clear('musicband_for_event');        
 
-        $this->setRedirect('index.php?option=com_musicband', JText::_('COM_MUSICBAND_EVENTS_ADD_SUCCESS'));
+        $this->setRedirect('index.php?option=com_musicband&amp;view=events', JText::_('COM_MUSICBAND_EVENTS_ADD_SUCCESS'));
     }
 }

@@ -67,6 +67,7 @@ class MusicbandViewFields extends JViewLegacy {
             // Przyciski
             //JToolBarHelper::apply('field.apply');
             JToolBarHelper::save('field.save');
+            JToolBarHelper::save2new('field.save2new');
             JToolBarHelper::cancel('field.cancel');
         } else {
             // Tytuł strony
@@ -76,8 +77,8 @@ class MusicbandViewFields extends JViewLegacy {
             JToolBarHelper::addNew('field.add');
             JToolBarHelper::editList('field.edit');
             JToolBarHelper::deleteList(JText::_('COM_MUSICBAND_CONFIRM_DELETE'), 'fields.delete');
-            JToolbarHelper::publishList('fields.publish');
-            JToolbarHelper::unpublishList('fields.unpublish');
+            JToolbarHelper::publishList('fields.publish', JText::_('COM_MUSICBAND_PUBLISH_FIELDS'));
+            JToolbarHelper::unpublishList('fields.unpublish', JText::_('COM_MUSICBAND_UNPUBLISH_FIELDS'));
         }
 
         if (JFactory::getUser()->authorise('core.admin', 'com_musicband'))

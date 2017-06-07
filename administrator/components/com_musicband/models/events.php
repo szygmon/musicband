@@ -48,10 +48,10 @@ class MusicbandModelEvents extends JModelLegacy {
     public function getSongs($event) {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true)
-                ->select('#__musicband.*, COUNT(#__musicband_songs_events.songid) as count, #__categories.title as category')
+                ->select('#__musicband_repertoire.*, COUNT(#__musicband_songs_events.songid) as count, #__categories.title as category')
                 ->leftJoin('#__musicband_songs_events on id=#__musicband_songs_events.songid')
                 ->leftJoin('#__categories on catid=#__categories.id')
-                ->from($db->quoteName('#__musicband'))
+                ->from($db->quoteName('#__musicband_repertoire'))
                 ->where('#__musicband_songs_events.eventid=' . $event)
                 ->group('id')
                 ->order('count DESC');

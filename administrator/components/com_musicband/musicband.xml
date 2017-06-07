@@ -8,7 +8,7 @@
     <copyright>Copyright (C) 2017 by szygmon</copyright>
     <license>Wszelkie prawa zastrzeżone</license>
     <!--  Ciąg version jest rejestrowane w tabeli -->
-    <version>1.00</version>
+    <version>1.02</version>
     <!-- Opis jest opcjonalny i domyślnie nazwa -->
     <description>COM_MUSICBAND_DESC</description>
  
@@ -32,18 +32,20 @@
         <filename>controller.php</filename>
         <filename>index.html</filename>
         <filename>musicband.php</filename>
+        <filename>generate-pdf.php</filename>
         
         <folder>controllers</folder>
         <folder>models</folder>
         <folder>views</folder>
     </files>
 	
-	<media destination="com_musicband" folder="media">
-		<folder>js</folder>
-		<folder>images</folder>
-		<folder>css</folder>
-                <folder>mpdf</folder>
-	</media>
+    <media destination="com_musicband" folder="media">
+        <folder>js</folder>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>mpdf</folder>
+        <folder>google-calendar</folder>
+    </media>
  
     <languages folder="site/language">
         <language tag="pl-PL">pl-PL.com_musicband.ini</language>
@@ -56,9 +58,11 @@
         </languages>
         <!-- Administration Menu Section -->
         <menu>COM_MUSICBAND</menu>
-		<submenu>
+        <submenu>
+            <menu link="option=com_musicband" view="default" img="" alt="">COM_MUSICBAND_LIST</menu>
             <menu link="option=com_categories&amp;extension=com_musicband" view="categories" img="" alt="">COM_MUSICBAND_CATEGORIES</menu>
-            <menu link="option=com_musicband&amp;view=events" img="" alt="">COM_MUSICBAND_EVENTS</menu>
+            <menu link="option=com_musicband&amp;view=events" view="events" img="" alt="">COM_MUSICBAND_EVENTS</menu>
+            <menu link="option=com_musicband&amp;view=contract" view="contract" img="" alt="">COM_MUSICBAND_CONTRACTS</menu>
         </submenu>
  
         <!-- Administrator lista plików -->

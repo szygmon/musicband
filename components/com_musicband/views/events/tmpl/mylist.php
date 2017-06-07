@@ -18,7 +18,7 @@ $span = ($this->params->get('show_demo_audio', 1) && $this->params->get('show_de
     <div class="span8"><h3><?php echo $this->event->date; ?></h3></div>
 </div>
 <div class="row-fluid center"><h4>Dostępny repertuar</h4></div>
-<form action="<?php echo JRoute::_('index.php?option=com_musicband&view=events'); ?>" method="post" name="Form">
+<form action="<?php echo JRoute::_('index.php?option=com_musicband&amp;view=events'); ?>" method="post" name="Form">
     <div class="row-fluid">
         <table id="musicband-list"  class="table table-bordered table-hover dataTable">
             <thead>

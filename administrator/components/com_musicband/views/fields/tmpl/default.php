@@ -26,7 +26,7 @@ if (!empty($this->sidebar)) :
                         <th style="width: 1%; align: center"><?php echo JHtml::_('grid.checkall'); ?></th>
                         <th style="width: 49%;"><?php echo JText::_('COM_MUSICBAND_FIELD_NAME'); ?></th>
                         <th style="width: 49%;"><?php echo JText::_('COM_MUSICBAND_FIELD_LABEL'); ?></th>
-                        <th style="width: 1%;"><?php echo JText::_('w kalendarzu'); ?></th>
+                        <th style="width: 1%;"><?php echo JText::_('COM_MUSICBAND_TO_CALENDAR'); ?></th>
                     </tr>
                 </thead>
                 <tbody>

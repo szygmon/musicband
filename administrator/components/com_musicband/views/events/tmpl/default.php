@@ -29,7 +29,7 @@ if (!empty($this->sidebar)) :
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_LOCATION'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_PASS'); ?></th>
                         <th><?php echo JText::_('COM_MUSICBAND_EVENT_SONGS_LIST'); ?></th>
-                        <th><?php echo JText::_('w kalendarzu'); ?></th>
+                        <th><?php echo JText::_('COM_MUSICBAND_TO_CALENDAR'); ?></th>
                     </tr>
                 </thead>
                 <tbody>

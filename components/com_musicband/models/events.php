@@ -24,9 +24,9 @@ class MusicbandModelEvents extends JModelItem {
         $db = JFactory::getDbo();
 
         $query = $db->getQuery(true)
-                ->select('#__musicband.*, #__categories.title as category')
+                ->select('#__musicband_repertoire.*, #__categories.title as category')
                 ->leftJoin('#__categories on catid=#__categories.id')
-                ->from($db->quoteName('#__musicband'));
+                ->from($db->quoteName('#__musicband_repertoire'));
 
         $db->setQuery($query);
         $result = $db->loadObjectList();
@@ -104,6 +104,6 @@ class MusicbandModelEvents extends JModelItem {
         $row->eventid = $eventid;
         $row->info = $info;
 
-        JFactory::getDbo()->insertObject('#__musicband_info', $row);
+        JFactory::getDbo()->insertObject('#__musicband_events_info', $row);
     }
 }
