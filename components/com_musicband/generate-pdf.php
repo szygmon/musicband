@@ -1,7 +1,7 @@
 <?php
 include('../../media/com_musicband/mpdf/vendor/autoload.php');
 
-$contract = $_POST['contract'];
+$contract = base64_decode(strtr($_POST['contract'], '-_,', '+/='));
 
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($contract);

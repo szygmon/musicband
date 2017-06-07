@@ -7,6 +7,7 @@ defined('_JEXEC') or die('Restricted access');
     <h2> <?php echo $this->escape($this->params->get('page_title')); ?> </h2>
     <?php
 endif;
+$this->contract = strtr(base64_encode($this->contract), '+/=', '-_,')
 ?>
 <form action="components/com_musicband/generate-pdf.php" method="post" name="adminForm" id="adminForm">    
     <input type="hidden" name="contract" value="<?php echo $this->contract; ?>" />
