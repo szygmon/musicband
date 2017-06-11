@@ -48,6 +48,10 @@ class MusicbandViewFields extends JViewLegacy {
 
         $this->items = $this->get('Fields');
         
+        // Info o d.o.
+        $application = JFactory::getApplication();
+        $application->enqueueMessage(JText::_('COM_MUSICBAND_PERSONAL_DATA_FIELDS_INFO'), 'notice');
+        
         parent::display($tpl);
     }
 

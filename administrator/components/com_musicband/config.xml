@@ -156,6 +156,34 @@
         
     </fieldset>
     <fieldset
+        name="musicband6"
+        label="COM_MUSICBAND_PERSONAL_DATA"
+        description="COM_MUSICBAND_PERSONAL_DATA_INFO"
+    >
+        <field
+            name="personal_data_show"
+            type="radio"
+            label="COM_MUSICBAND_PERSONAL_DATA_SHOW"
+            description="COM_MUSICBAND_PERSONAL_DATA_SHOW_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field 
+            name="perdonal_data_text" 
+            label ="COM_MUSICBAND_PERSONAL_DATA_CONTENT" 
+            description="COM_MUSICBAND_PERSONAL_DATA_CONTENT"
+            type="editor" 
+            buttons="true"
+            filter="safehtml" 
+            default="Przesyłane w formularzu dane osobowe nigdy nie będą udostępniane osobom trzecim i nie będą przetwarzane w celach marketingowych Zgodnie z Ustawą o Ochronie Danych Osobowych z dn. 29 sierpnia 1997 r. (tekst jedn. Dz. U.  2014 r. poz. 1182).
+Prośbę o usunięcie takich danych można złożyć w dowolnym momencie.
+Przekazane dane osobowe są wykorzystywane do kontaktu w sprawach imprezy."
+        />
+    </fieldset>
+    <fieldset
         name="permissions"
         label="JCONFIG_PERMISSIONS_LABEL"
         description="JCONFIG_PERMISSIONS_DESC"

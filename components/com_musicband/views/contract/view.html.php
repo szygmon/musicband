@@ -27,11 +27,11 @@ class MusicbandViewContract extends JViewLegacy {
         $this->item = $this->get('Item');
         $this->fields = $this->get('Fields');
         //var_dump($this->fields);
-        
+
         if (JFactory::getApplication()->input->get('layout', 'default') == 'pdf') {
-            $this->contract = $this->getModel()->generatePdf(); 
+            $this->contract = $this->getModel()->generatePdf();
         }
-        
+
         // Tytuł strony + przyrostek witryny
         $title = $this->params->get('page_title');
         if (empty($title)) {
@@ -43,6 +43,11 @@ class MusicbandViewContract extends JViewLegacy {
         }
 
         $this->document->setTitle($title);
+
+        if ($app->input->get('layout', 'default') == 'default') {
+            if ($this->params->get('personal_data_show', 0))
+                $app->enqueueMessage($this->params->get('perdonal_data_text'), 'notice');
+        }
 
         parent::display($tpl);
     }
